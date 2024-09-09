@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: EchoGNN_CL
+description: Use of Contrastive Loss on a GNN-based model to Improve the Ejection Fraction Estimation
+img: assets/img/CL_illustration.png
+redirect: https://github.com/nimakondori/EchoGNN_CL/blob/main/README.md
 importance: 3
 category: work
 ---
