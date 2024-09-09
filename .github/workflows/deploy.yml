@@ -72,6 +72,10 @@ jobs:
         with:
           ruby-version: "3.2.2"
           bundler-cache: true
+      - name: Install additional gems
+        run: |
+          gem install faraday-retry
+          bundle add jekyll-toc
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
