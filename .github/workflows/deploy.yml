@@ -74,15 +74,15 @@ jobs:
           bundler-cache: true
       - name: Install additional gems
         run: |
-          gem install faraday-retry
           bundle add jekyll-toc
+          bundle install
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
           valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
+          propertyPath: "plugins"
+          value: ${{ toJson(fromJson(toJson(yaml.plugins)) + ['jekyll-toc']) }}
       - name: Install and Build 🔧
         run: |
           pip3 install --upgrade jupyter
