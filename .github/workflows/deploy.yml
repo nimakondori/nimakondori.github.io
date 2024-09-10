@@ -70,19 +70,15 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.2"
+          ruby-version: "3.3.4"
           bundler-cache: true
-      - name: Install additional gems
-        run: |
-          bundle add jekyll-toc
-          bundle install
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
           valueFile: "_config.yml"
-          propertyPath: "plugins"
-          value: ${{ toJson(fromJson(toJson(yaml.plugins)) + ['jekyll-toc']) }}
+          propertyPath: "giscus.repo"
+          value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
           pip3 install --upgrade jupyter
