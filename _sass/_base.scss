@@ -168,6 +168,17 @@ ul.task-list input[type="checkbox"] {
 
 .card {
   background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--global-theme-color);
+    box-shadow: 0 8px 28px rgba(34, 229, 255, 0.12);
+  }
 
   .card-img {
     width: 100%;
@@ -180,6 +191,27 @@ ul.task-list input[type="checkbox"] {
 
   .card-body {
     padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  }
+}
+
+// Traffic page
+
+.traffic-card {
+  padding: 1.5rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  background-color: var(--global-card-bg-color);
+
+  &__button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+
+    &:hover {
+      background-color: var(--global-theme-color);
+      color: var(--global-hover-text-color);
+    }
   }
 }
 

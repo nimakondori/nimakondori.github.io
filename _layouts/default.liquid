@@ -17,6 +17,9 @@
 
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <!-- Animated aurora background -->
+    {% include aurora_background.liquid %}
+
     <!-- Header -->
     {% include header.liquid %}
 
@@ -67,6 +70,7 @@
     {% include scripts/mathjax.liquid %}
     {% include scripts/pseudocode.liquid %}
     {% include scripts/analytics.liquid %}
+    {% include scripts/goatcounter.liquid %}
     {% include scripts/progressBar.liquid %}
     {% include scripts/wechatModal.liquid %}
     {% include scripts/imageLayouts.liquid %}

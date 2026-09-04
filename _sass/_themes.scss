@@ -7,8 +7,8 @@
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$purple-color};
+  --global-theme-color: #{$electric-cyan-dim};
+  --global-hover-color: #{$electric-cyan-dim};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
@@ -21,6 +21,11 @@
   --global-back-to-top-text-color: #{$white-color};
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$black-color};
+
+  // Aurora background blob colors (subtle in light mode)
+  --aurora-c1: rgba(59, 130, 246, 0.16);
+  --aurora-c2: rgba(168, 85, 247, 0.14);
+  --aurora-c3: rgba(34, 229, 255, 0.14);
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -68,23 +73,28 @@
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #{$grey-color-dark};
+  --global-bg-color: #{$space-black};
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$cyan-color};
-  --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
+  --global-theme-color: #{$electric-cyan};
+  --global-hover-color: #{$electric-cyan};
+  --global-hover-text-color: #{$space-black};
+  --global-footer-bg-color: #{$space-black-card};
+  --global-footer-text-color: #{$grey-color-light};
+  --global-footer-link-color: #{$electric-cyan};
   --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
+  --global-divider-color: rgba(34, 229, 255, 0.15);
+  --global-card-bg-color: #{$space-black-card};
   --global-back-to-top-bg-color: rgba(#{red($white-color)}, #{green($white-color)}, #{blue($white-color)}, 0.5);
   --global-back-to-top-text-color: #{$black-color};
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};
+
+  // Aurora background blob colors (vivid in dark mode)
+  --aurora-c1: rgba(59, 130, 246, 0.35);
+  --aurora-c2: rgba(168, 85, 247, 0.3);
+  --aurora-c3: rgba(34, 229, 255, 0.32);
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;

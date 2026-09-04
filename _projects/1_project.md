@@ -1,7 +1,7 @@
 ---
 layout: page
 title: UBC ARC Sockeye Tutorial
-description: A comprehensive guide to using UBC's Advanced Research Computing Sockeye cluster
+description: A hands-on guide to training deep learning jobs on UBC's Sockeye HPC cluster, from SLURM basics to your first GPU run
 img: assets/img/ubc_arc.png
 importance: 1
 category: fun

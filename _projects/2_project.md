@@ -1,7 +1,7 @@
 ---
 layout: page
 title: My first AI Application
-description: An attempt to productionize AI as an undergrad student :)
+description: An early undergrad experiment in shipping an ML model behind a real React front end
 img: assets/img/github_logo.png
 importance: 2
 category: fun
