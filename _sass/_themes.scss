@@ -22,10 +22,17 @@
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$black-color};
 
-  // Aurora background blob colors (subtle in light mode)
-  --aurora-c1: rgba(59, 130, 246, 0.16);
-  --aurora-c2: rgba(168, 85, 247, 0.14);
-  --aurora-c3: rgba(34, 229, 255, 0.14);
+  // Scene hero background (light mode: image kept as a faint, legible wash)
+  --scene-vignette: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.92) 100%
+  );
+  --scene-image-opacity: 0.35;
+  --scene-image-brightness: 1.3;
+  --scene-base-bg: #{$white-color};
+  --global-accent-secondary: #{$scene-gold-dim};
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -91,10 +98,17 @@ html[data-theme="dark"] {
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};
 
-  // Aurora background blob colors (vivid in dark mode)
-  --aurora-c1: rgba(59, 130, 246, 0.35);
-  --aurora-c2: rgba(168, 85, 247, 0.3);
-  --aurora-c3: rgba(34, 229, 255, 0.32);
+  // Scene hero background (dark mode: full vivid image)
+  --scene-vignette: linear-gradient(
+    180deg,
+    rgba(5, 7, 10, 0.25) 0%,
+    rgba(5, 7, 10, 0.4) 55%,
+    rgba(5, 7, 10, 0.82) 100%
+  );
+  --scene-image-opacity: 1;
+  --scene-image-brightness: 0.85;
+  --scene-base-bg: #{$space-black};
+  --global-accent-secondary: #{$scene-gold};
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;

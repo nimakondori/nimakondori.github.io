@@ -177,7 +177,9 @@ ul.task-list input[type="checkbox"] {
   &:hover {
     transform: translateY(-3px);
     border-color: var(--global-theme-color);
-    box-shadow: 0 8px 28px rgba(34, 229, 255, 0.12);
+    box-shadow:
+      0 8px 24px rgba(34, 229, 255, 0.14),
+      0 2px 18px rgba(245, 185, 66, 0.1);
   }
 
   .card-img {
@@ -578,6 +580,15 @@ footer.sticky-bottom {
   }
 }
 
+// Hero name treatment on the About page — duotone gradient pulled from the
+// scene background's blue-to-gold palette.
+.post-header .post-title .font-weight-bold {
+  background: linear-gradient(90deg, var(--global-theme-color), var(--global-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .post-list {
   margin: 0;
   margin-bottom: 40px;
@@ -956,11 +967,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--global-theme-color);
+  background-image: linear-gradient(90deg, var(--global-theme-color), var(--global-accent-secondary));
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--global-theme-color);
+  background-image: linear-gradient(90deg, var(--global-theme-color), var(--global-accent-secondary));
 }
 
 .progress-container {
@@ -974,7 +985,7 @@ progress::-moz-progress-bar {
 }
 
 .progress-bar {
-  background-color: var(--global-theme-color);
+  background-image: linear-gradient(90deg, var(--global-theme-color), var(--global-accent-secondary));
   width: 0%;
   display: block;
   height: inherit;

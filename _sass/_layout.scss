@@ -2,6 +2,11 @@
  * Content
  ******************************************************************************/
 
+::selection {
+  background-color: var(--global-accent-secondary);
+  color: #000;
+}
+
 body {
   padding-bottom: 70px;
   color: var(--global-text-color);
