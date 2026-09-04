@@ -1,0 +1,29 @@
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — home">
+      <span class="nav__mark">NK</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Section navigation">
+      <a href="{{ '/#about' | relative_url }}">About</a>
+      <a href="{{ '/#work' | relative_url }}">Work</a>
+      <a href="{{ '/#publications' | relative_url }}">Research</a>
+      <a href="{{ '/#experience' | relative_url }}">Experience</a>
+      <a class="nav__cta" href="{{ '/#contact' | relative_url }}">Contact</a>
+    </nav>
+
+    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="nav-mobile" hidden>
+    <a href="{{ '/#about' | relative_url }}">About</a>
+    <a href="{{ '/#work' | relative_url }}">Work</a>
+    <a href="{{ '/#publications' | relative_url }}">Research</a>
+    <a href="{{ '/#experience' | relative_url }}">Experience</a>
+    <a href="{{ '/#contact' | relative_url }}">Contact</a>
+  </div>
+</header>

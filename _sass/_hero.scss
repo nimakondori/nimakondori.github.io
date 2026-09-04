@@ -1,0 +1,110 @@
+/*******************************************************************************
+ * Hero
+ ******************************************************************************/
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem var(--gutter) 6rem;
+
+  &__inner {
+    max-width: 940px;
+  }
+
+  &__eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.75rem;
+  }
+
+  &__title {
+    font-size: clamp(2.75rem, 9.5vw, 7.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    text-wrap: balance;
+
+    .line {
+      display: block;
+    }
+
+    em {
+      font-style: normal;
+      background: var(--duo);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &__lede {
+    max-width: 50ch;
+    margin-inline: auto;
+    color: var(--text-dim);
+    font-size: clamp(1rem, 0.95rem + 0.35vw, 1.2rem);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+
+  &__cue {
+    position: absolute;
+    bottom: 2.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-dim);
+
+    &:hover {
+      color: var(--cyan);
+    }
+  }
+
+  &__cue-line {
+    width: 1px;
+    height: 46px;
+    background: linear-gradient(to bottom, transparent, var(--cyan));
+    animation: cue-pulse 2.4s ease-in-out infinite;
+  }
+
+  &__cue-text {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes cue-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__cue-line {
+    animation: none;
+  }
+}

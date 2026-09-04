@@ -1,0 +1,122 @@
+/*******************************************************************************
+ * Interior pages (project detail, /traffic/, 404)
+ ******************************************************************************/
+
+.page {
+  padding-top: clamp(8rem, 18vh, 11rem);
+
+  &__title {
+    font-size: clamp(2.25rem, 1.6rem + 3vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.prose {
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.25rem;
+    list-style: revert;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.25rem;
+    border-left: 2px solid var(--gold);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88em;
+    padding: 0.15em 0.4em;
+    border-radius: 5px;
+    background: rgba(34, 229, 255, 0.1);
+    color: var(--cyan);
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 1.1rem 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--ink-line);
+    background: var(--ink-raised);
+
+    code {
+      background: none;
+      padding: 0;
+      color: var(--text);
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+
+    th,
+    td {
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid var(--ink-line);
+      text-align: left;
+    }
+  }
+}
+
+.figure {
+  margin: 2rem 0;
+
+  img {
+    border-radius: var(--radius);
+    border: 1px solid var(--ink-line);
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-align: center;
+  }
+}
+
+.traffic-card {
+  padding: 1.75rem;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius);
+  background: var(--ink-raised);
+  margin-bottom: 2rem;
+}

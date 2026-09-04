@@ -1,0 +1,103 @@
+/*******************************************************************************
+ * Contact + footer
+ ******************************************************************************/
+
+.contact {
+  text-align: center;
+  padding-bottom: clamp(4rem, 9vh, 7rem);
+
+  .section__label {
+    margin-bottom: 2rem;
+  }
+
+  &__headline {
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    margin-bottom: 2.5rem;
+
+    .line {
+      display: block;
+    }
+
+    em {
+      font-style: normal;
+      background: var(--duo);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &__email {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 0.9rem + 1.1vw, 1.9rem);
+    font-weight: 600;
+    color: var(--text);
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--ink-line);
+    transition: color 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+
+    &:hover {
+      color: var(--cyan);
+      border-bottom-color: var(--cyan);
+    }
+  }
+
+  &__socials {
+    margin-top: 3rem;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+
+  a {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    border: 1px solid var(--ink-line);
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: rgba(255, 255, 255, 0.02);
+    transition:
+      color 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.footer {
+  border-top: 1px solid var(--ink-line);
+  background: rgba(5, 7, 10, 0.6);
+
+  &__inner {
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding: 2rem var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.83rem;
+    color: var(--text-dim);
+  }
+}

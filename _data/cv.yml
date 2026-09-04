@@ -27,6 +27,18 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Senior Machine Learning Scientist
+      institution: Lily AI
+      year: 2025 - Present
+      description:
+        - Design LLM-powered agentic pipelines for e-commerce product understanding.
+        - Improve model attribution and evaluation for generative systems in production.
+        - Deploy and scale ML systems serving production traffic.
+    - title: Machine Learning Scientist
+      institution: Lily AI
+      year: 2025
+      description:
+        - Joined to fine-tune and deploy LLMs and agents for e-commerce applications.
     - title: Machine Learning Engineer
       institution: Scenebox (Acquired by Applied Intuition)
       year: 2020-2022

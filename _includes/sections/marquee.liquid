@@ -1,0 +1,11 @@
+<section class="marquee" aria-label="Tech stack">
+  <div class="marquee__track" id="marquee-track">
+    {% for i in (1..2) %}
+      <ul class="marquee__group" {% if i == 2 %}aria-hidden="true"{% endif %}>
+        {% for item in site.data.stack %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</section>

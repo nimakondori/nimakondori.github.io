@@ -1,0 +1,73 @@
+{% assign shown_groups = "Experience,Research Experience,Education" | split: "," %}
+
+<section class="section experience" id="experience">
+  <div class="wrap">
+    <p class="section__label" data-reveal>05 — Experience</p>
+    <h2 class="section__title" data-reveal>The path so far</h2>
+
+    <div class="timeline" id="timeline">
+      <span class="timeline__line" aria-hidden="true"><i id="timeline-progress"></i></span>
+
+      {% for group_name in shown_groups %}
+        {% for group in site.data.cv %}
+          {% if group.title == group_name %}
+            <div class="timeline__group">
+              <h3 class="timeline__group-title" data-reveal>{{ group.title }}</h3>
+
+              {% for item in group.contents %}
+                <article class="tl-item" data-reveal>
+                  <div class="tl-item__year">{{ item.year }}</div>
+                  <div class="tl-item__body">
+                    <h4 class="tl-item__title">{{ item.title }}</h4>
+                    {% if item.institution %}
+                      <p class="tl-item__org">{{ item.institution }}</p>
+                    {% endif %}
+                    {% if item.description %}
+                      <ul class="tl-item__points">
+                        {% for point in item.description %}
+                          {% if point.contents %}
+                            {% for sub in point.contents %}
+                              <li>{{ sub }}</li>
+                            {% endfor %}
+                          {% else %}
+                            <li>{{ point }}</li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    {% for group in site.data.cv %}
+      {% if group.title == "Honors and Awards" %}
+        <div class="awards" data-reveal>
+          <h3 class="timeline__group-title">Honors &amp; Awards</h3>
+          <ul class="awards__list">
+            {% for entry in group.contents %}
+              {% for item in entry.items %}
+                <li><span class="awards__year">{{ entry.year }}</span> {{ item }}</li>
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <a
+      class="btn btn--primary"
+      href="{{ site.resume_pdf | prepend: '/assets/pdf/' | relative_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-reveal
+      data-magnetic
+    >
+      Download résumé (PDF)
+    </a>
+  </div>
+</section>

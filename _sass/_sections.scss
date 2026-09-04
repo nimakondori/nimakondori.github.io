@@ -1,0 +1,147 @@
+/*******************************************************************************
+ * Shared section furniture — labels, titles, about, marquee, stats
+ ******************************************************************************/
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+
+  &__label {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: clamp(1.85rem, 1.2rem + 2.6vw, 3.4rem);
+    max-width: 22ch;
+    margin-bottom: 2.5rem;
+    text-wrap: balance;
+
+    em {
+      font-style: normal;
+      background: var(--duo);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+/* About */
+
+.about {
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+
+  &__prose {
+    max-width: 60ch;
+    color: var(--text-dim);
+    font-size: 1.05rem;
+  }
+
+  &__portrait {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--ink-line);
+    will-change: transform;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(34, 229, 255, 0.12), rgba(245, 185, 66, 0.12));
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: 3rem;
+}
+
+.stat {
+  &__num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1;
+    background: var(--duo);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__label {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+  }
+}
+
+/* Marquee */
+
+.marquee {
+  overflow: hidden;
+  padding-block: 2.5rem;
+  border-block: 1px solid var(--ink-line);
+  background: rgba(255, 255, 255, 0.015);
+
+  &__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    padding-right: 3.5rem;
+
+    li {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 0.9rem + 1vw, 1.9rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-dim);
+      white-space: nowrap;
+
+      &::after {
+        content: "◆";
+        margin-left: 3.5rem;
+        font-size: 0.5em;
+        color: var(--gold);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__portrait {
+    max-width: 320px;
+  }
+}

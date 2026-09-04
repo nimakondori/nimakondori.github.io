@@ -1,26 +1,26 @@
 ---
 layout: page
 permalink: /traffic/
-title: traffic
+title: Traffic
 description: Live visitor stats for this site, tracked with GoatCounter.
-nav: false
 ---
 
 <div class="traffic-card">
   {% if site.enable_goatcounter and site.goatcounter_code %}
     <p>
-      This site's visitor traffic is tracked with
+      This site's traffic is tracked with
       <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">GoatCounter</a>
-      — a free, open-source, cookie-less analytics tool. No personal data is collected and no
-      cookie banner is needed.
+      — free, open-source, cookie-less analytics. No personal data is collected and no cookie
+      banner is needed.
     </p>
     <a
-      class="btn btn-outline traffic-card__button"
+      class="btn btn--ghost"
       href="https://{{ site.goatcounter_code }}.goatcounter.com/"
       target="_blank"
       rel="noopener noreferrer"
+      data-magnetic
     >
-      View live traffic dashboard →
+      View live dashboard ↗
     </a>
   {% else %}
     <p>

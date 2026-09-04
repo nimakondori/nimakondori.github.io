@@ -1,26 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Front matter required so Jekyll compiles this file
 ---
-@charset "utf-8";
 
-// Dimensions
-$max-content-width: {{ site.max_width }};
-
-@import
-  "variables",
-  "themes",
-  "scene",
-  "layout",
-  "base",
-  "distill",
-  "cv",
-  "tabs",
-  "typograms",
-  "font-awesome/fontawesome",
-  "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular",
-  "tabler-icons/tabler-icons.scss",
-  "tabler-icons/tabler-icons-filled.scss",
-  "tabler-icons/tabler-icons-outline.scss"
-;
+@import "tokens", "base", "scene", "nav", "hero", "sections", "work", "publications", "timeline", "contact", "page";
