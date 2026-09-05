@@ -11,16 +11,11 @@
         - Designed and built an outcome grader for task completion and user dissatisfaction, adding deeper LLM-based failure analysis for high-dissatisfaction sessions.
     - title: Senior Machine Learning Scientist
       institution: Lily AI (Mountain View, CA), remote from Vancouver, BC
-      year: Jul 2025 - Apr 2026
+      year: Apr 2025 - Apr 2026
       description:
         - Built a multimodal RAG system combining product text, images, and VLM signals, improving attribute-extraction F1 by 25% over legacy methods while cutting token usage 10% per product.
         - Designed SmartQC, an automated quality-control system using 3 LLM judges and MCP-backed tools, reducing human QC cost by 30% through high-confidence attribute auto-approval.
         - Fine-tuned transformer-based vision models for image-driven attribute extraction, enabling scalable visual catalog understanding.
-    - title: Machine Learning Intern
-      institution: Lily AI (Mountain View, CA), remote from Vancouver, BC
-      year: Apr 2025 - Jun 2025
-      description:
-        - Fine-tuned and deployed LLMs and agents for e-commerce applications.
     - title: Machine Learning Engineer
       institution: CanDry Technologies (Vancouver, BC)
       year: Dec 2022 - Jan 2024
