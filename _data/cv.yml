@@ -10,7 +10,7 @@
         - Analyzed ~100k Copilot sessions with the Office of the CTO, identifying distribution gaps between offline evaluations and online usage that informed benchmark-instance selection for agent hillclimbing.
         - Designed and built an outcome grader for task completion and user dissatisfaction, adding deeper LLM-based failure analysis for high-dissatisfaction sessions.
     - title: Senior Machine Learning Scientist
-      institution: Lily AI (Mountain View, CA) — Remote
+      institution: Lily AI (Mountain View, CA) — Remote from Vancouver, BC
       year: Apr 2025 - Apr 2026
       description:
         - Built a multimodal RAG system combining product text, images, and VLM signals, improving attribute-extraction F1 by 25% over legacy methods while cutting token usage 10% per product.
