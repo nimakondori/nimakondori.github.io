@@ -1,12 +1,19 @@
-- PyTorch
+- Agent Evaluation
+- Benchmark Design
+- LLM-as-Judge
+- Outcome Grading
+- Coding Agents
+- Multimodal RAG
 - Diffusion Models
-- LLMs
-- Agentic Systems
-- Computer Vision
-- Graph Neural Networks
-- MLOps
-- Distributed Training
-- RAG
-- Model Evaluation
+- ControlNet
+- VLMs
+- Model Distillation
+- PyTorch
+- Transformers
+- MCP
+- Airflow
+- Kafka
+- Kubernetes
+- Azure
 - AWS
 - Python

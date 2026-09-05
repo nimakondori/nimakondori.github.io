@@ -199,7 +199,8 @@
         el.textContent = Math.round(obj.val);
       },
       onComplete: function () {
-        el.textContent = end + "+";
+        var suffix = el.getAttribute("data-count-suffix");
+        el.textContent = end + (suffix === null ? "+" : suffix);
       },
     });
   });

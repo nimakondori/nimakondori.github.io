@@ -7,11 +7,12 @@ first_name: Nima
 last_name: Kondori
 email: nimakondori96@gmail.com
 description: >
-  ML scientist building agentic AI systems and generative models — from video
-  diffusion for medical imaging to production ML at scale.
-tagline: Building agentic AI systems that ship
-role: Senior Machine Learning Scientist at Lily AI
-keywords: machine learning, generative AI, diffusion models, agentic AI, MLOps, computer vision
+  Applied Scientist working on coding-agent evaluation, benchmark design, and
+  LLM-as-judge systems — with a background in multimodal research and
+  production ML.
+tagline: Evaluating agentic AI at scale
+role: Applied Scientist at Microsoft · GitHub
+keywords: agent evaluation, benchmark design, LLM-as-judge, coding agents, machine learning, multimodal RAG, diffusion models
 lang: en
 icon: favicon.svg
 
