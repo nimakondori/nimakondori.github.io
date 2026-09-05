@@ -9,8 +9,8 @@ description: Live visitor stats for this site, tracked with GoatCounter.
   {% if site.enable_goatcounter and site.goatcounter_code %}
     <p>
       This site's traffic is tracked with
-      <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">GoatCounter</a>
-      — free, open-source, cookie-less analytics. No personal data is collected and no cookie
+      <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">GoatCounter</a>,
+      a free, open-source, cookie-less analytics tool. No personal data is collected and no cookie
       banner is needed.
     </p>
     <a

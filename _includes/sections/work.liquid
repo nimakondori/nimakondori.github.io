@@ -1,12 +1,12 @@
 {% comment %}
   Archived entries (early student work) still have pages but are kept out of the
-  featured grid — see the resume-alignment audit, §7.1.
+  featured grid. See the resume-alignment audit, §7.1.
 {% endcomment %}
 {% assign projects = site.projects | where_exp: "p", "p.archived != true" | sort: 'importance' %}
 
 <section class="section work" id="work">
   <div class="wrap">
-    <p class="section__label" data-reveal>03 — Work</p>
+    <p class="section__label" data-reveal>03 / Work</p>
     <h2 class="section__title" data-reveal>Selected projects</h2>
 
     <div class="work__grid">
