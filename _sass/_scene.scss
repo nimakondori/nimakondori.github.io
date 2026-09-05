@@ -1,6 +1,9 @@
 /*******************************************************************************
  * Scene background — full-bleed neural-network hero image with cinematic
  * motion (slow Ken Burns drift + a layer of glowing drifting particles).
+ *
+ * Background photo: Unsplash (photo ID xuTJZ7uD7PI), free under the Unsplash
+ * License. Swap assets/img/bg-scene.jpg to change it.
  ******************************************************************************/
 
 .scene-bg {
@@ -17,9 +20,9 @@
   inset: -8%;
   background-image: url("../img/bg-scene.jpg");
   background-size: cover;
-  background-position: center 30%;
+  background-position: 35% bottom;
   opacity: var(--scene-image-opacity);
-  filter: saturate(1.05) brightness(var(--scene-image-brightness));
+  filter: saturate(var(--scene-image-saturate, 1.05)) brightness(var(--scene-image-brightness));
   animation: scene-ken-burns 50s ease-in-out infinite alternate;
   will-change: transform;
 }

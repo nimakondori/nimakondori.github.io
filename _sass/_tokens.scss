@@ -14,14 +14,16 @@
   --duo: linear-gradient(90deg, var(--cyan), var(--gold));
 
   // Scene background layering
-  --scene-vignette: linear-gradient(
-    180deg,
-    rgba(5, 7, 10, 0.35) 0%,
-    rgba(5, 7, 10, 0.55) 50%,
-    rgba(5, 7, 10, 0.88) 100%
-  );
+  --scene-vignette: radial-gradient(
+      ellipse at 50% 42%,
+      rgba(5, 7, 10, 0.42) 0%,
+      rgba(5, 7, 10, 0.58) 58%,
+      rgba(5, 7, 10, 0.82) 100%
+    ),
+    linear-gradient(180deg, rgba(5, 7, 10, 0.1) 0%, rgba(5, 7, 10, 0.22) 65%, rgba(5, 7, 10, 0.75) 100%);
   --scene-image-opacity: 1;
-  --scene-image-brightness: 0.8;
+  --scene-image-brightness: 1.45;
+  --scene-image-saturate: 1.15;
   --scene-base-bg: var(--ink);
 
   // Typography

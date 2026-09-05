@@ -12,3 +12,11 @@ node_modules/
 vendor
 .idea
 .superpowers
+
+# local screenshots / scratch
+*.png.tmp
+shot-*.png
+v2-*.png
+final-*.png
+new-*.png
+review-*.png
