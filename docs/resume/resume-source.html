@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nima Kondori — Résumé</title>
+    <style>
+      @page {
+        size: letter;
+        margin: 0.55in 0.6in;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 9.6pt;
+        line-height: 1.4;
+        color: #16181d;
+      }
+      h1 {
+        font-size: 20pt;
+        letter-spacing: -0.01em;
+        margin: 0 0 3px;
+      }
+      .contact {
+        font-size: 8.8pt;
+        color: #3c4149;
+        margin-bottom: 12px;
+      }
+      .contact a {
+        color: #16181d;
+        text-decoration: none;
+      }
+      .contact span:not(:last-child)::after {
+        content: " · ";
+        color: #9aa0a8;
+      }
+      h2 {
+        font-size: 9pt;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #16181d;
+        border-bottom: 1px solid #c8ccd2;
+        padding-bottom: 2px;
+        margin: 14px 0 8px;
+      }
+      .summary {
+        margin: 0 0 2px;
+      }
+      .role {
+        margin-bottom: 9px;
+      }
+      .role-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .role-title {
+        font-weight: 700;
+      }
+      .role-dates {
+        font-size: 8.8pt;
+        color: #3c4149;
+        white-space: nowrap;
+      }
+      .role-org {
+        font-size: 9.2pt;
+        color: #3c4149;
+        margin-bottom: 3px;
+      }
+      ul {
+        margin: 0;
+        padding-left: 15px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      .skills p,
+      .pubs p,
+      .misc p {
+        margin: 0 0 4px;
+      }
+      .label {
+        font-weight: 700;
+      }
+      .pubs p {
+        margin-bottom: 5px;
+      }
+      .venue {
+        color: #3c4149;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Nima Kondori</h1>
+    <div class="contact">
+      <span>nimakondori96@gmail.com</span>
+      <span>linkedin.com/in/nima-kondori</span>
+      <span>github.com/nimakondori</span>
+      <span>nimakondori.github.io</span>
+      <span>Vancouver, BC</span>
+    </div>
+
+    <p class="summary">
+      Applied Scientist working on evaluation for LLM and agentic systems — intent taxonomies,
+      LLM-as-judge pipelines, benchmark design, and outcome grading — combined with production ML and
+      multimodal research experience across Python, PyTorch, Azure, and AWS.
+    </p>
+
+    <h2>Experience</h2>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Applied Scientist</span>
+        <span class="role-dates">Apr. 2026 – Present</span>
+      </div>
+      <div class="role-org">Microsoft | GitHub — Vancouver, BC</div>
+      <ul>
+        <li>
+          Designed a multi-axis taxonomy and evaluated LLM classifiers for Copilot agent interactions,
+          achieving 90%+ consistency on each intent axis and enabling offline-vs.-online evaluation gap
+          analysis.
+        </li>
+        <li>
+          Adapted intent classification to multi-turn sessions using silver labels from a stronger-LLM
+          panel calibrated with human feedback, then trained a GNN-based model that preserved accuracy
+          against those labels at roughly 2% of the original classifier's cost and latency.
+        </li>
+        <li>
+          Analyzed approximately 100k Copilot sessions with the Office of the CTO, identifying
+          distribution gaps between offline evaluations and online usage that informed
+          benchmark-instance selection for agent hillclimbing.
+        </li>
+        <li>
+          Designed and built an outcome grader for task completion and user dissatisfaction, adding
+          deeper LLM-based failure analysis for high-dissatisfaction sessions and supporting an
+          in-progress benchmark-generation pipeline.
+        </li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Senior Machine Learning Scientist</span>
+        <span class="role-dates">Apr. 2025 – Apr. 2026</span>
+      </div>
+      <div class="role-org">Lily AI (Mountain View, CA) — Remote | Vancouver, BC</div>
+      <ul>
+        <li>
+          Built a multimodal RAG system combining product text, images, and VLM signals, improving
+          attribute-extraction F1 by 25% over legacy methods while prompt and pipeline optimizations
+          reduced token usage by 10% per product.
+        </li>
+        <li>
+          Designed SmartQC, an automated quality-control system using 3 LLM judges and MCP-backed
+          tools, reducing human QC cost by 30% through high-confidence attribute auto-approval.
+        </li>
+        <li>
+          Fine-tuned transformer-based vision models for image-driven attribute extraction, reducing
+          dependence on text-only pipelines and enabling scalable visual catalog understanding.
+        </li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Graduate Research Assistant</span>
+        <span class="role-dates">Sep. 2022 – Apr. 2025</span>
+      </div>
+      <div class="role-org">University of British Columbia — Vancouver, BC</div>
+      <ul>
+        <li>
+          Led the technical work of a 5-person research team developing ControlNet-style video diffusion
+          models for controllable cardiac structure and motion in generated echocardiograms.
+        </li>
+        <li>
+          Applied consistency distillation to the video-generation pipeline, reducing latency by 140×
+          from ~7 minutes to ~3 seconds per video while preserving downstream utility.
+        </li>
+        <li>
+          Curated a 100k-video echocardiogram dataset and trained ejection-fraction estimation models
+          that achieved 87% accuracy in cardiac-function prediction.
+        </li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Machine Learning Engineer</span>
+        <span class="role-dates">Dec. 2022 – Jan. 2024</span>
+      </div>
+      <div class="role-org">CanDry Technologies — Vancouver, BC</div>
+      <ul>
+        <li>
+          Built a ViT-based classifier for production visual quality control, achieving 85% precision
+          and sub-30ms Android inference with TFLite.
+        </li>
+        <li>
+          Developed a ControlNet synthetic-data pipeline that generated 1,000 photorealistic
+          minority-class samples and improved rare-state recall by 15%.
+        </li>
+        <li>
+          Built a PyTorch Lightning and W&amp;B experimentation platform with 500+ automated
+          hyperparameter trials, halving experiment-iteration time.
+        </li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Machine Learning Engineer</span>
+        <span class="role-dates">Oct. 2020 – Sep. 2022</span>
+      </div>
+      <div class="role-org">Scenebox — Vancouver, BC</div>
+      <ul>
+        <li>
+          Built and maintained Python and JavaScript workflows for LiDAR, image, video, geolocation, and
+          time-series data using Airflow, FFmpeg, Kafka, ROS bag processors, Redis, and Elasticsearch.
+        </li>
+        <li>
+          Helped rebalance search and identity-management workloads by moving selected
+          Elasticsearch-backed data into SQL storage, reducing query latency by 20% while avoiding
+          unnecessary search-cluster scaling.
+        </li>
+        <li>
+          Participated in designing, implementing, and testing a SageMaker Ground Truth integration for
+          enterprise labeling workflows, accelerating annotation turnaround by 30% for 5+ clients.
+        </li>
+        <li>
+          Maintained CI/CD infrastructure, deployed Scenebox clusters into customer AWS VPCs, and
+          migrated selected self-managed services to AWS-managed equivalents.
+        </li>
+      </ul>
+    </div>
+
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <p>
+        <span class="label">Agent Evaluation:</span> coding agents, benchmark design, multi-turn agent
+        sessions, telemetry-informed evaluation, LLM-as-judge systems, outcome grading, silver-label
+        calibration
+      </p>
+      <p>
+        <span class="label">ML and Multimodal:</span> PyTorch, Transformers, Hugging Face, diffusion
+        models, ControlNet, VLMs, multimodal RAG, model distillation, synthetic data
+      </p>
+      <p>
+        <span class="label">Systems and Data:</span> Airflow, Kafka, Docker, Kubernetes, CI/CD, W&amp;B,
+        MCP, Elasticsearch, PostgreSQL, MySQL
+      </p>
+      <p><span class="label">Cloud and Languages:</span> Azure, AWS, Python, C/C++, JavaScript</p>
+    </div>
+
+    <h2>Education</h2>
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Master of Applied Science, Electrical &amp; Computer Engineering</span>
+        <span class="role-dates">Sep. 2022 – Apr. 2025</span>
+      </div>
+      <div class="role-org">
+        University of British Columbia — GPA 93.1% · Thesis: Exploring Video Diffusion Models in
+        Echocardiogram Generation
+      </div>
+    </div>
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Bachelor of Applied Science, Electrical &amp; Computer Engineering</span>
+        <span class="role-dates">Sep. 2017 – May 2020</span>
+      </div>
+      <div class="role-org">University of British Columbia — GPA 89%</div>
+    </div>
+
+    <h2>Publications</h2>
+    <div class="pubs">
+      <p>
+        HAPPI: Hyperbolic Hierarchical Part Prototypes for Image Recognition.
+        <span class="venue">Beyond Euclidean Workshop, ICCV 2025.</span>
+      </p>
+      <p>
+        ControlEchoSynth: Boosting Ejection Fraction Estimation Models via Controlled Video Diffusion.
+        <span class="venue">CVPR 2024 Workshop.</span>
+      </p>
+      <p>
+        ProtoASNet: Dynamic Prototypes for Interpretable and Uncertainty-Aware Aortic Stenosis
+        Classification. <span class="venue">MICCAI 2023.</span>
+      </p>
+    </div>
+
+    <h2>Selected Project</h2>
+    <div class="misc">
+      <p>
+        <span class="label">Agentic Job Finder</span> — Python, CrewAI, LLM Agents, PostgreSQL. Built an
+        agentic resume-tailoring platform with multi-agent validation designed to reduce hallucinated or
+        unsupported claims, and YAML-based configuration for reproducible prompt, model, and tool
+        settings.
+      </p>
+    </div>
+
+    <h2>Awards &amp; Service</h2>
+    <div class="misc">
+      <p>
+        <span class="label">Awards:</span> Canada Graduate Scholarship (CGS-M); NSERC Undergraduate
+        Student Research Award.
+      </p>
+      <p>
+        <span class="label">Service:</span> Reviewer for IEEE Transactions on Medical Imaging and the
+        NeurIPS 2024 Adaptive Foundation Models Workshop; IEEE TMI Distinguished Reviewer Certificate,
+        2024.
+      </p>
+    </div>
+  </body>
+</html>
