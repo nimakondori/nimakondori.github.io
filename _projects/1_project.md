@@ -4,6 +4,7 @@ title: UBC ARC Sockeye Tutorial
 description: A hands-on guide to training deep learning jobs on UBC's Sockeye HPC cluster, from SLURM basics to your first GPU run
 img: assets/img/ubc_arc.png
 importance: 1
+archived: true
 category: fun
 related_publications: false
 ---

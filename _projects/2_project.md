@@ -4,6 +4,7 @@ title: My first AI Application
 description: An early undergrad experiment in shipping an ML model behind a real React front end
 img: assets/img/github_logo.png
 importance: 2
+archived: true
 category: fun
 redirect: https://github.com/nimakondori/ml_deployment_fe
 giscus_comments: false

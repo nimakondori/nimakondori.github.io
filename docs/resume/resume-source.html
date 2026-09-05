@@ -59,11 +59,21 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      /* A table row rather than flex/float: both can emit PDF text out of DOM
+         order for short blocks, which makes ATS parsers read a job's dates
+         after its bullets. Table cells extract in document order. */
       .role-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 12px;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .role-head td {
+        padding: 0;
+        vertical-align: baseline;
+      }
+      .role-head .role-dates {
+        text-align: right;
+        white-space: nowrap;
+        padding-left: 12px;
       }
       .role-title {
         font-weight: 700;
@@ -120,10 +130,7 @@
     <h2>Experience</h2>
 
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Applied Scientist</span>
-        <span class="role-dates">Apr. 2026 – Present</span>
-      </div>
+      <table class="role-head"><tr><td class="role-title">Applied Scientist</td><td class="role-dates">Apr. 2026 – Present</td></tr></table>
       <div class="role-org">Microsoft | GitHub — Vancouver, BC</div>
       <ul>
         <li>
@@ -150,11 +157,8 @@
     </div>
 
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Senior Machine Learning Scientist</span>
-        <span class="role-dates">Apr. 2025 – Apr. 2026</span>
-      </div>
-      <div class="role-org">Lily AI (Mountain View, CA) — Remote | Vancouver, BC</div>
+      <table class="role-head"><tr><td class="role-title">Senior Machine Learning Scientist</td><td class="role-dates">Jul. 2025 – Apr. 2026</td></tr></table>
+      <div class="role-org">Lily AI (Mountain View, CA) — Remote from Vancouver, BC</div>
       <ul>
         <li>
           Built a multimodal RAG system combining product text, images, and VLM signals, improving
@@ -173,10 +177,15 @@
     </div>
 
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Graduate Research Assistant</span>
-        <span class="role-dates">Sep. 2022 – Apr. 2025</span>
-      </div>
+      <table class="role-head"><tr><td class="role-title">Machine Learning Intern</td><td class="role-dates">Apr. 2025 – Jun. 2025</td></tr></table>
+      <div class="role-org">Lily AI (Mountain View, CA) — Remote from Vancouver, BC</div>
+      <ul>
+        <li>Fine-tuned and deployed LLMs and agents for e-commerce applications.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <table class="role-head"><tr><td class="role-title">Graduate Research Assistant</td><td class="role-dates">Sep. 2022 – Apr. 2025</td></tr></table>
       <div class="role-org">University of British Columbia — Vancouver, BC</div>
       <ul>
         <li>
@@ -195,10 +204,7 @@
     </div>
 
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Machine Learning Engineer</span>
-        <span class="role-dates">Dec. 2022 – Jan. 2024</span>
-      </div>
+      <table class="role-head"><tr><td class="role-title">Machine Learning Engineer</td><td class="role-dates">Dec. 2022 – Jan. 2024</td></tr></table>
       <div class="role-org">CanDry Technologies — Vancouver, BC</div>
       <ul>
         <li>
@@ -217,10 +223,7 @@
     </div>
 
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Machine Learning Engineer</span>
-        <span class="role-dates">Oct. 2020 – Sep. 2022</span>
-      </div>
+      <table class="role-head"><tr><td class="role-title">Machine Learning Engineer</td><td class="role-dates">Oct. 2020 – Sep. 2022</td></tr></table>
       <div class="role-org">Scenebox — Vancouver, BC</div>
       <ul>
         <li>
@@ -263,20 +266,14 @@
 
     <h2>Education</h2>
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Master of Applied Science, Electrical &amp; Computer Engineering</span>
-        <span class="role-dates">Sep. 2022 – Apr. 2025</span>
-      </div>
+      <table class="role-head"><tr><td class="role-title">Master of Applied Science, Electrical &amp; Computer Engineering</td><td class="role-dates">Sep. 2022 – Apr. 2025</td></tr></table>
       <div class="role-org">
         University of British Columbia — GPA 93.1% · Thesis: Exploring Video Diffusion Models in
         Echocardiogram Generation
       </div>
     </div>
     <div class="role">
-      <div class="role-head">
-        <span class="role-title">Bachelor of Applied Science, Electrical &amp; Computer Engineering</span>
-        <span class="role-dates">Sep. 2017 – May 2020</span>
-      </div>
+      <table class="role-head"><tr><td class="role-title">Bachelor of Applied Science, Electrical &amp; Computer Engineering</td><td class="role-dates">Sep. 2017 – May 2020</td></tr></table>
       <div class="role-org">University of British Columbia — GPA 89%</div>
     </div>
 
