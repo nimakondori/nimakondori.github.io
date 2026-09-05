@@ -11,6 +11,7 @@ description: >
   LLM-as-judge systems — with a background in multimodal research and
   production ML.
 tagline: Evaluating agentic AI at scale
+seo_tagline: Applied Scientist, Coding-Agent Evaluation
 role: Applied Scientist at Microsoft · GitHub
 keywords: agent evaluation, benchmark design, LLM-as-judge, coding agents, machine learning, multimodal RAG, diffusion models
 lang: en
