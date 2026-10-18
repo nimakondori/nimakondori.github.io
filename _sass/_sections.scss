@@ -7,26 +7,26 @@
   padding-block: var(--section-y);
 
   &__label {
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    letter-spacing: 0.24em;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--violet);
     margin-bottom: 1.5rem;
   }
 
   &__title {
-    font-size: clamp(1.85rem, 1.2rem + 2.6vw, 3.4rem);
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 1.4rem + 3vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
     max-width: 22ch;
     margin-bottom: 2.5rem;
     text-wrap: balance;
 
     em {
-      font-style: normal;
-      background: var(--duo);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      @include aurora-text;
     }
   }
 }
@@ -51,14 +51,15 @@
     position: relative;
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--ink-line);
+    border: 1px solid var(--glass-line);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
     will-change: transform;
 
     &::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(160deg, rgba(34, 229, 255, 0.12), rgba(245, 185, 66, 0.12));
+      background: linear-gradient(160deg, rgba(169, 156, 255, 0.16), rgba(110, 242, 230, 0.08) 50%, rgba(255, 140, 198, 0.14));
       pointer-events: none;
     }
 
@@ -82,10 +83,7 @@
     font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem);
     font-weight: 700;
     line-height: 1;
-    background: var(--duo);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    @include aurora-text;
   }
 
   &__label {
@@ -102,8 +100,10 @@
 .marquee {
   overflow: hidden;
   padding-block: 2.5rem;
-  border-block: 1px solid var(--ink-line);
-  background: rgba(255, 255, 255, 0.015);
+  border-block: 1px solid var(--glass-line);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
 
   &__track {
     display: flex;
@@ -129,7 +129,7 @@
         content: "◆";
         margin-left: 3.5rem;
         font-size: 0.5em;
-        color: var(--gold);
+        color: var(--violet);
         vertical-align: middle;
       }
     }

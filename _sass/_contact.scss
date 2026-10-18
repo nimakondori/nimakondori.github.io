@@ -11,9 +11,11 @@
   }
 
   &__headline {
-    font-size: clamp(2.5rem, 8vw, 6.5rem);
-    letter-spacing: -0.04em;
-    line-height: 0.98;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    letter-spacing: -0.02em;
+    line-height: 0.95;
     margin-bottom: 2.5rem;
 
     .line {
@@ -21,11 +23,7 @@
     }
 
     em {
-      font-style: normal;
-      background: var(--duo);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      @include aurora-text;
     }
   }
 
@@ -41,8 +39,8 @@
     will-change: transform;
 
     &:hover {
-      color: var(--cyan);
-      border-bottom-color: var(--cyan);
+      color: var(--teal);
+      border-bottom-color: var(--teal);
     }
   }
 
@@ -60,21 +58,23 @@
   a {
     display: inline-block;
     padding: 0.6rem 1.25rem;
-    border: 1px solid var(--ink-line);
+    border: 1px solid var(--glass-line);
     border-radius: 100px;
     font-family: var(--font-display);
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-dim);
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     transition:
       color 0.25s ease,
       border-color 0.25s ease,
       transform 0.25s ease;
 
     &:hover {
-      color: var(--cyan);
-      border-color: var(--cyan);
+      color: var(--teal);
+      border-color: var(--teal);
       transform: translateY(-2px);
     }
   }
@@ -82,7 +82,7 @@
 
 .footer {
   border-top: 1px solid var(--ink-line);
-  background: rgba(5, 7, 10, 0.6);
+  background: rgba(6, 6, 12, 0.6);
 
   &__inner {
     max-width: var(--wrap);

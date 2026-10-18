@@ -1,0 +1,204 @@
+% Public resume for nimakondori.github.io.
+% Same template as the job-application resumes, minus phone and email.
+% Build: tectonic docs/resume/nimakondori_resume.tex --outdir assets/pdf
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX\input{glyphtounicode}\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\ifPDFTeX\pdfgentounicode=1\fi
+
+\hypersetup{
+  pdftitle={Nima Kondori - Resume},
+  pdfauthor={Nima Kondori}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1} \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Nima Kondori} \\ \vspace{1pt}
+    \small \href{https://linkedin.com/in/nima-kondori}{\underline{linkedin.com/in/nima-kondori}} $|$
+    \href{https://github.com/nimakondori}{\underline{github.com/nimakondori}} $|$
+    \href{https://nimakondori.github.io}{\underline{nimakondori.github.io}} \\
+    \small Vancouver, Canada $|$ TN Visa Eligible $|$ Open to Seattle / San Francisco / New York
+\end{center}
+
+\section{Summary}
+\resumeSubHeadingListStart
+  \item\small{\textbf{Applied Scientist} focused on coding-agent benchmarks, evaluation systems, and production ML. Hands-on experience improving agent behavior through benchmark analysis, telemetry-informed experiment design, user-outcome grading, multimodal RAG, LLM-as-judge systems, and end-to-end ML infrastructure across Python, PyTorch, Ray, PySpark, Airflow, Kafka, Azure, and AWS.}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Applied Scientist}{Apr. 2026 -- Present}
+      {Microsoft / GitHub}{Vancouver, BC (Remote)}
+      \resumeItemListStart
+        \resumeItem{Designed a multi-axis taxonomy and evaluated LLM classifiers for Copilot agent interactions, achieving 90\%+ consistency on each intent axis and enabling offline-vs.-online evaluation gap analysis.}
+        \resumeItem{Adapted intent classification to multi-turn sessions using silver labels from a stronger-LLM panel calibrated with human feedback, then trained a GNN-based model that preserved accuracy at roughly 2\% of the original classifier's cost and latency.}
+        \resumeItem{Analyzed $\sim$100k Copilot sessions with the Office of the CTO, identifying distribution gaps between offline evaluations and online usage that informed benchmark-instance selection for agent hillclimbing.}
+        \resumeItem{Designed and built an outcome grader for task completion and user dissatisfaction, adding deeper LLM-based failure analysis for high-dissatisfaction sessions.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior Machine Learning Scientist}{Apr. 2025 -- Apr. 2026}
+      {Lily AI}{Mountain View, CA (Remote)}
+      \resumeItemListStart
+        \resumeItem{Built a multimodal RAG attribute-extraction system over e-commerce product catalogs, combining text, image, and VLM signals to generate SEO/GEO-optimized product attributes at scale.}
+        \resumeItem{Reduced LLM token usage by 10\% per product and improved attribute-extraction F1 by 25\% over legacy methods through prompt, data-pipeline, and model-assisted validation optimizations.}
+        \resumeItem{Designed SmartQC, an automated LLM-as-judge quality-control system using 3 independent AI judges and MCP-backed tools; reduced human QC cost by 30\% by auto-approving high-confidence attributes.}
+        \resumeItem{Fine-tuned transformer-based vision models for image-driven product attribute extraction, reducing dependency on text-only pipelines and enabling scalable visual catalog understanding.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Graduate Research Assistant}{Sep. 2022 -- Apr. 2025}
+      {University of British Columbia}{Vancouver, BC}
+      \resumeItemListStart
+        \resumeItem{Led a 5-person research team building controllable video diffusion models for echocardiogram generation under Dr. Renjie Liao and Dr. Purang Abolmaesumi.}
+        \resumeItem{Trained ControlNet-style video generation models to control cardiac structure and motion dynamics across generated echocardiogram sequences.}
+        \resumeItem{Applied consistency distillation to reduce generation latency by 140x, from $\sim$7 minutes to $\sim$3 seconds per video, while preserving downstream utility.}
+        \resumeItem{Curated a 100k-video echocardiogram dataset and trained ejection-fraction estimation models achieving 87\% accuracy for downstream cardiac function prediction.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Machine Learning Engineer}{Dec. 2022 -- Jan. 2024}
+      {CanDry Technologies}{Vancouver, BC}
+      \resumeItemListStart
+        \resumeItem{Built a ViT-based visual quality-control classifier for production thermal-state detection, achieving 85\% precision and sub-30ms Android inference via TFLite.}
+        \resumeItem{Developed a ControlNet-based synthetic data pipeline generating 1,000 photorealistic minority-class samples, improving rare-state recall by 15\%.}
+        \resumeItem{Built a PyTorch Lightning + W\&B training platform with automated hyperparameter sweeps across 500+ trials, reducing experiment iteration time by 2x.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Machine Learning Engineer}{Oct. 2020 -- Sep. 2022}
+      {Scenebox}{Vancouver, BC}
+      \resumeItemListStart
+        \resumeItem{Engineered scalable image and embedding search services using FAISS, achieving sub-300ms retrieval across 10,000+ assets for product and attribute matching workloads.}
+        \resumeItem{Integrated AWS SageMaker Ground Truth annotation pipelines, accelerating annotation turnaround by 30\% for 5+ enterprise clients through automated job orchestration.}
+        \resumeItem{Deployed AWS-managed Kafka clusters for real-time ingestion and led an Elasticsearch-to-PostgreSQL migration, reducing message processing time by 10\% and query latency by 20\%.}
+        \resumeItem{Built Airflow workflows for multimodal data ingestion across image, video, and structured client data, enabling reliable downstream ML training and search pipelines.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Agentic AI/Evals}{: coding agents, benchmark design, agent traces, telemetry-informed evaluation, LLM-as-judge systems, user-outcome grading, RAG, tool-use workflows} \\
+     \textbf{ML Systems}{: PyTorch, Transformers, Hugging Face, Diffusers, Ray, PySpark, Airflow, Kafka, Docker, Kubernetes, CI/CD} \\
+     \textbf{Agent/Data Stack}{: LangChain, CrewAI, MCP, Nemotron Agentic Toolkit, FAISS, Qdrant, Elasticsearch, PostgreSQL, MySQL} \\
+     \textbf{Cloud/Languages}{: Azure, AWS, Python, C/C++, JavaScript}
+    }}
+ \end{itemize}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of British Columbia}{Vancouver, BC}
+      {Master of Applied Science, Electrical \& Computer Engineering; GPA: 93.1\%}{Sep. 2022 -- Apr. 2025}
+      \resumeItemListStart
+        \resumeItem{Thesis: Exploring Video Diffusion Models in Echocardiogram Generation}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of British Columbia}{Vancouver, BC}
+      {Bachelor of Applied Science, Electrical \& Computer Engineering; GPA: 89\%}{Sep. 2017 -- May 2020}
+  \resumeSubHeadingListEnd
+
+\section{Publications}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{HAPPI}: Hyperbolic Hierarchical Prototypes for Image Recognition, Beyond Euclidean Workshop, ICCV 2025 \\
+     \textbf{ControlEchoSynth}: Boosting Ejection Fraction Estimation Models via Controlled Video Diffusion, CVPR 2024 Workshop \\
+     \textbf{ProtoASNet}: Dynamic Prototypes for Interpretable and Uncertainty-Aware Aortic Stenosis Classification, MICCAI 2023
+    }}
+ \end{itemize}
+
+\section{Selected Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Browser-Based VLM Agent} $|$ \emph{JavaScript, Groq, Llama 3.2-11B, VLMs}}{}
+          \resumeItemListStart
+            \resumeItem{Built a browser extension that captures user-selected screen regions and routes visual context to VLM agents for structured real-time analysis.}
+            \resumeItem{Implemented multi-agent reasoning workflow with configurable model backends and specialized prompts for visual and textual signals.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Agentic Job Finder} $|$ \emph{Python, CrewAI, LLM Agents, PostgreSQL}}{}
+          \resumeItemListStart
+            \resumeItem{Built an agentic resume-tailoring platform that parses job descriptions and user resumes to generate role-specific resume drafts.}
+            \resumeItem{Designed multi-agent validation workflows to reduce hallucinated or unsupported resume claims and added YAML-based configuration for reproducible prompt/model/tool settings.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Multi-Tasking Transformer} $|$ \emph{Python, PyTorch, ViT, Docker}}{}
+          \resumeItemListStart
+            \resumeItem{Developed a Vision Transformer for cardiac cycle classification and heart-failure estimation, achieving 85\% concurrent accuracy across simultaneous tasks.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Awards \& Service}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Awards}{: Canada Graduate Scholarship (CGS-M), NSERC Undergraduate Student Research Award, Graduate Support Initiative} \\
+     \textbf{Service}{: Reviewer for IEEE Transactions on Medical Imaging and Adaptive Foundation Models Workshop at NeurIPS 2024; IEEE TMI Distinguished Reviewer Certificate 2024}
+    }}
+ \end{itemize}
+
+\end{document}

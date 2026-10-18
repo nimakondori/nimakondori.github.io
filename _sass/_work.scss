@@ -11,9 +11,11 @@
 .work-card {
   display: flex;
   flex-direction: column;
-  background: var(--ink-raised);
-  border: 1px solid var(--ink-line);
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
   border-radius: var(--radius);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   overflow: hidden;
   color: var(--text);
   transition:
@@ -24,10 +26,10 @@
 
   &:hover {
     transform: translateY(-6px);
-    border-color: rgba(34, 229, 255, 0.45);
+    border-color: rgba(110, 242, 230, 0.45);
     box-shadow:
       0 18px 50px rgba(0, 0, 0, 0.5),
-      0 0 32px rgba(34, 229, 255, 0.12);
+      0 0 32px rgba(110, 242, 230, 0.12);
     color: var(--text);
 
     .work-card__media img {
@@ -35,17 +37,14 @@
     }
 
     .work-card__title {
-      background: var(--duo);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      @include aurora-text;
     }
   }
 
   &__media {
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    background: #0d1219;
+    background: rgba(12, 13, 24, 0.6);
 
     img {
       width: 100%;
@@ -64,11 +63,11 @@
   }
 
   &__tag {
-    font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--violet);
   }
 
   &__title {
@@ -93,8 +92,8 @@
   z-index: 60;
   padding: 0.5rem 0.95rem;
   border-radius: 100px;
-  background: var(--cyan);
-  color: #04070d;
+  background: var(--text);
+  color: var(--ink);
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 600;

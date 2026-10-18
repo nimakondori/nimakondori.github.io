@@ -1,110 +1,307 @@
 /*******************************************************************************
- * Hero
+ * Hero, act 1: particle name over the aurora
  ******************************************************************************/
 
 .hero {
   position: relative;
   min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 8rem var(--gutter) 6rem;
+  overflow: hidden;
+
+  &__particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: pan-y;
+  }
+
+  // Static name for reduced motion or when canvas can't run
+  &__name-fallback {
+    display: none;
+    position: absolute;
+    inset: 0 0 auto;
+    top: 22%;
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3.5rem, 15vw, 11rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    @include aurora-text;
+  }
+
+  &.is-static &__name-fallback {
+    display: block;
+  }
 
   &__inner {
-    max-width: 940px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    padding-inline: var(--gutter);
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &__tagline {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 1.1rem + 2vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+
+    em {
+      @include aurora-text;
+    }
   }
 
   &__eyebrow {
-    font-family: var(--font-display);
-    font-size: 0.82rem;
-    letter-spacing: 0.22em;
+    margin: 0.9rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.75rem;
+    color: var(--text-dim);
+  }
+
+  &__cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+  }
+
+  &__cue-mouse {
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 36px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 7px;
+      width: 3px;
+      height: 7px;
+      margin-left: -1.5px;
+      border-radius: 2px;
+      background: var(--text);
+      animation: cue-scroll 1.6s ease-in-out infinite;
+    }
+  }
+
+  &__cue:hover &__cue-mouse {
+    border-color: var(--teal);
+  }
+}
+
+@keyframes cue-scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/*******************************************************************************
+ * Hero, act 2: what I do right now + live agent-eval console
+ ******************************************************************************/
+
+.now {
+  position: relative;
+  padding-block: clamp(4rem, 10vh, 7rem) var(--section-y);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
   }
 
   &__title {
-    font-size: clamp(2.75rem, 9.5vw, 7.5rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    margin-bottom: 2rem;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2.3rem, 1.4rem + 3.2vw, 4.4rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
     text-wrap: balance;
-
-    .line {
-      display: block;
-    }
+    margin-bottom: 1.5rem;
 
     em {
-      font-style: normal;
-      background: var(--duo);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      @include aurora-text;
     }
   }
 
   &__lede {
-    max-width: 50ch;
-    margin-inline: auto;
+    max-width: 46ch;
     color: var(--text-dim);
-    font-size: clamp(1rem, 0.95rem + 0.35vw, 1.2rem);
+    font-size: 1.05rem;
   }
 
   &__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.9rem;
-    justify-content: center;
-    margin-top: 2.5rem;
-  }
-
-  &__cue {
-    position: absolute;
-    bottom: 2.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    color: var(--text-dim);
-
-    &:hover {
-      color: var(--cyan);
-    }
-  }
-
-  &__cue-line {
-    width: 1px;
-    height: 46px;
-    background: linear-gradient(to bottom, transparent, var(--cyan));
-    animation: cue-pulse 2.4s ease-in-out infinite;
-  }
-
-  &__cue-text {
-    font-family: var(--font-display);
-    font-size: 0.68rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
+    gap: 0.8rem;
+    margin-top: 2rem;
   }
 }
 
-@keyframes cue-pulse {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scaleY(0.7);
+.console {
+  margin: 0;
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+
+    i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+
+      &:nth-child(1) {
+        background: #ff6b8b;
+      }
+      &:nth-child(2) {
+        background: var(--amber);
+      }
+      &:nth-child(3) {
+        background: #6ef2c6;
+      }
+    }
+
+    span {
+      margin-left: 0.6rem;
+    }
   }
+
+  &__log {
+    height: 19rem;
+    padding: 1rem 1.1rem;
+    overflow: hidden;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #d4d8e6;
+    white-space: pre;
+
+    .is-cmd {
+      color: rgba(255, 255, 255, 0.45);
+    }
+    .is-step {
+      color: var(--violet);
+    }
+    .is-ok {
+      color: #6ef2c6;
+    }
+    .is-warn {
+      color: var(--amber);
+    }
+  }
+
+  &__caret {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--teal);
+    vertical-align: -2px;
+    animation: caret-blink 1s steps(1) infinite;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    div {
+      padding: 0.75rem 1rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    dt {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    dd {
+      margin: 0.2rem 0 0;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+  }
+}
+
+@keyframes caret-blink {
   50% {
-    opacity: 1;
-    transform: scaleY(1);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .now__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .console__log {
+    height: 15rem;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .console__log {
+    font-size: 0.64rem;
+    padding-inline: 0.9rem;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+  }
+
+  .console__stats dd {
+    font-size: 1.05rem;
+  }
+
+  .console__stats dt {
+    font-size: 0.6rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__cue-line {
+  .hero__cue-mouse::after,
+  .console__caret {
     animation: none;
   }
 }

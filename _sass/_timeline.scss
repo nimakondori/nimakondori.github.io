@@ -21,8 +21,8 @@
       display: block;
       width: 100%;
       height: 0;
-      background: var(--duo);
-      box-shadow: 0 0 12px rgba(34, 229, 255, 0.5);
+      background: linear-gradient(180deg, var(--violet), var(--teal), var(--pink));
+      box-shadow: 0 0 12px rgba(110, 242, 230, 0.5);
     }
   }
 
@@ -60,7 +60,8 @@
     height: 9px;
     border-radius: 50%;
     background: var(--ink);
-    border: 1.5px solid var(--cyan);
+    border: 1.5px solid var(--teal);
+    box-shadow: 0 0 10px rgba(110, 242, 230, 0.6);
     transform: translateX(-4px);
   }
 
@@ -68,7 +69,7 @@
     font-family: var(--font-display);
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--violet);
     padding-top: 0.15rem;
   }
 
@@ -80,7 +81,7 @@
       color: inherit;
 
       &:hover {
-        color: var(--cyan);
+        color: var(--teal);
       }
     }
   }
@@ -110,7 +111,7 @@
         top: 0.65em;
         width: 5px;
         height: 1px;
-        background: var(--gold);
+        background: var(--violet);
       }
     }
   }
@@ -130,16 +131,18 @@
       font-size: 0.93rem;
       color: var(--text-dim);
       padding: 0.85rem 1rem;
-      border: 1px solid var(--ink-line);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--glass-line);
+      border-radius: 12px;
+      background: var(--glass);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
     }
   }
 
   &__year {
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--gold);
+    color: var(--violet);
     flex-shrink: 0;
   }
 }

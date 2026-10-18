@@ -1,26 +1,73 @@
+{% comment %}
+  Two-act opening.
+  Act 1: the name, drawn as particles over the aurora (assets/js/hero.js).
+  Act 2: what I do right now, with a live agent-eval console.
+{% endcomment %}
+
 <section class="hero" id="hero">
+  <h1 class="visually-hidden">{{ site.title }}</h1>
+
+  <canvas class="hero__particles" id="hero-particles" aria-hidden="true"></canvas>
+  <p class="hero__name-fallback" aria-hidden="true">{{ site.first_name }}<br>{{ site.last_name }}</p>
+
   <div class="hero__inner">
+    <p class="hero__tagline" data-reveal>Teaching machines to <em>grade machines.</em></p>
     <p class="hero__eyebrow" data-reveal>{{ site.role }}</p>
-
-    <h1 class="hero__title">
-      <span class="line" data-split>Evaluating</span>
-      <span class="line" data-split><em>agentic AI</em></span>
-      <span class="line" data-split>at scale</span>
-    </h1>
-
-    <p class="hero__lede" data-reveal>
-      Benchmark design, LLM-as-judge systems, and outcome grading for coding agents,
-      backed by multimodal research and production ML.
-    </p>
-
-    <div class="hero__actions" data-reveal>
-      <a class="btn btn--primary" href="#work" data-magnetic>View the work</a>
-      <a class="btn btn--ghost" href="#contact" data-magnetic>Get in touch</a>
-    </div>
   </div>
 
-  <a class="hero__cue" href="#about" aria-label="Scroll to about">
-    <span class="hero__cue-line"></span>
-    <span class="hero__cue-text">Scroll</span>
+  <a class="hero__cue" href="#now" aria-label="Scroll to what I do">
+    <span class="hero__cue-mouse"></span>
   </a>
+</section>
+
+<section class="now" id="now">
+  <div class="wrap now__grid">
+    <div class="now__copy">
+      <p class="section__label" data-reveal>Right now</p>
+      <h2 class="now__title" data-reveal>
+        Measuring what coding agents get right, and why the <em>benchmarks</em> disagree with real users.
+      </h2>
+      <p class="now__lede" data-reveal>
+        Applied Scientist on Copilot agents at GitHub. Before that, multimodal RAG and LLM judges at
+        Lily AI, and 140× faster echocardiogram video diffusion at UBC.
+      </p>
+      <div class="now__actions" data-reveal>
+        <a
+          class="btn btn--primary"
+          href="{{ site.resume_pdf | prepend: '/assets/pdf/' | relative_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-magnetic
+          >Résumé</a
+        >
+        <a class="btn btn--ghost" href="#work" data-magnetic>Selected work</a>
+      </div>
+    </div>
+
+    <figure class="console" id="console" data-reveal data-tilt>
+      <div class="console__bar" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <span>copilot-eval — zsh</span>
+      </div>
+      <div class="console__log" id="console-log" aria-hidden="true"></div>
+      <dl class="console__stats">
+        <div>
+          <dt>sessions analyzed</dt>
+          <dd data-console-count="100000" data-format="k">~100k</dd>
+        </div>
+        <div>
+          <dt>intent consistency</dt>
+          <dd data-console-count="90" data-suffix="%+">90%+</dd>
+        </div>
+        <div>
+          <dt>cost vs. baseline</dt>
+          <dd data-console-count="2" data-from="100" data-prefix="~" data-suffix="%">~2%</dd>
+        </div>
+      </dl>
+      <figcaption class="visually-hidden">
+        Illustration of an agent-evaluation run: classifying about 100k Copilot sessions with 90%+
+        intent consistency, then distilling the classifier to about 2% of the original cost.
+      </figcaption>
+    </figure>
+  </div>
 </section>
