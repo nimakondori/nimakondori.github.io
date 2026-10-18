@@ -115,7 +115,7 @@
     });
   }
 
-  /* Hero: headline lines rise in, then supporting content */
+  /* Hero: tagline and role rise in once the particle name has gathered */
   var heroLines = document.querySelectorAll(".hero [data-split]");
   var heroRest = document.querySelectorAll(".hero [data-reveal]");
   var intro = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -126,7 +126,7 @@
     intro.to(heroLines, { yPercent: 0, duration: 1.05, stagger: 0.09 }, 0.25);
   }
   if (heroRest.length) {
-    intro.to(heroRest, { opacity: 1, y: 0, duration: 0.8, stagger: 0.08 }, 0.7);
+    intro.to(heroRest, { opacity: 1, y: 0, duration: 0.9, stagger: 0.12 }, 1.1);
     gsap.set(heroRest, { y: 18 });
   }
 
@@ -174,6 +174,21 @@
     opacity: 0.25,
     ease: "none",
     scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+  });
+
+  /* Particle name lifts away as act 2 scrolls in */
+  gsap.to(".hero__particles, .hero__name-fallback", {
+    yPercent: -12,
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+  });
+
+  /* Aurora stays vivid through the opening, then calms down for reading */
+  gsap.to("#scene-dim", {
+    opacity: 0.5,
+    ease: "none",
+    scrollTrigger: { trigger: ".now", start: "center center", end: "bottom top", scrub: true },
   });
 
   /* Portrait parallax */
